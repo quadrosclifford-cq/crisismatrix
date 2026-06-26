@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRISIS MATRIX | Emergency Preparedness App</title>
+  <meta name="description" content="CRISIS MATRIX is an AI-powered emergency preparedness app with offline guides, SOS support, first aid, and global emergency numbers." />
+  <meta name="theme-color" content="#050607" />
+  <link rel="icon" type="image/png" href="data:image/png;base64,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" />
+  <script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=8L0qA3p965zg8itbCT1Crgyhf23vcB4Lwhx9Utyl1yy3DRPeBSR-RJ7JnuJbsMXQ6yMio0NEkfs5WpPjykvPEEaofJljQWTGulaKm-YStkzPVT63oV9VrZtzcqVfU-rYfX_3JoFoUTcVelz3-Ru_hrAANmGQMp36DKMtVtVdgUqxXGH20RT0v2kD3AyNUlw3l2D1EjyP9OeuP5OlvWPG2rniOFrNCSqfgh-XoSLUTFsoL3CqoNPkrYZYJT0xVsVG84U68ePkCRKzJm_lGXcPrw" charset="UTF-8"></script><style>
+    :root {
+      --bg: #050607;
+      --panel: rgba(255,255,255,.055);
+      --panel-strong: rgba(255,255,255,.085);
+      --border: rgba(255,255,255,.13);
+      --border-soft: rgba(255,255,255,.08);
+      --text: #ffffff;
+      --muted: rgba(255,255,255,.64);
+      --soft: rgba(255,255,255,.42);
+      --red: #ff3447;
+      --red-deep: #d91f32;
+      --blue: #2f7dff;
+      --shadow: 0 24px 80px rgba(0,0,0,.42);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 18%, rgba(255,52,71,.20), transparent 28%),
+        radial-gradient(circle at 78% 20%, rgba(47,125,255,.18), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(255,52,71,.08), transparent 34%),
+        var(--bg);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle at 50% 18%, black, transparent 74%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 22px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      display: block;
+      width: 165px;
+      height: 37px;
+      object-fit: contain;
+      image-rendering: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px;
+      border: 1px solid var(--border-soft);
+      border-radius: 999px;
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+      padding: 9px 14px;
+      border-radius: 999px;
+      transition: background .2s ease, color .2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 54px;
+      padding: 70px 0 52px;
+      min-height: calc(100vh - 86px);
+    }
+
+    .hero-copy { max-width: 650px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,52,71,.34);
+      color: #ff7080;
+      background: rgba(255,52,71,.10);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--red);
+      box-shadow: 0 0 0 8px rgba(255,52,71,.12);
+    }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 86px);
+      line-height: .94;
+      letter-spacing: -0.075em;
+      font-weight: 950;
+      max-width: 780px;
+    }
+
+    h1 span {
+      display: inline-block;
+      color: var(--red);
+      text-shadow: 0 0 42px rgba(255,52,71,.20);
+    }
+
+    .subtitle {
+      margin-top: 26px;
+      max-width: 610px;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 20px);
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 850;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--red), var(--red-deep));
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: 0 18px 50px rgba(255,52,71,.22);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.055);
+      border: 1px solid var(--border);
+      color: rgba(255,255,255,.88);
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border: 1px solid var(--border-soft);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255,255,255,.04);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .visual {
+      position: relative;
+      min-height: 560px;
+    }
+
+    .phone {
+      position: relative;
+      width: min(390px, 100%);
+      margin: 0 0 0 auto;
+      border-radius: 42px;
+      padding: 14px;
+      background: linear-gradient(145deg, rgba(255,255,255,.20), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.20);
+      box-shadow: var(--shadow);
+    }
+
+    .phone-screen {
+      min-height: 660px;
+      border-radius: 32px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,52,71,.24), transparent 35%),
+        linear-gradient(180deg, #11141c, #07080c 58%, #050607);
+      padding: 24px;
+    }
+
+    .screen-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+
+    .mini-logo img { width: 130px; height: auto; display: block; }
+
+    .status {
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .08em;
+      color: #80ffb0;
+      background: rgba(24,198,93,.11);
+      border: 1px solid rgba(24,198,93,.24);
+      padding: 7px 9px;
+      border-radius: 999px;
+    }
+
+    .sos-card {
+      padding: 24px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, rgba(255,52,71,.24), rgba(255,52,71,.08));
+      border: 1px solid rgba(255,52,71,.32);
+      margin-bottom: 16px;
+    }
+
+    .sos-label { color: #ff9ca6; font-size: 12px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .sos-title { font-size: 28px; line-height: 1.1; font-weight: 950; margin-top: 8px; letter-spacing: -.03em; }
+    .sos-text { color: var(--muted); font-size: 14px; line-height: 1.55; margin-top: 10px; }
+
+    .quick-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+
+    .quick {
+      min-height: 126px;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+
+    .quick-icon { font-size: 24px; margin-bottom: 14px; }
+    .quick-title { font-size: 14px; font-weight: 850; }
+    .quick-copy { color: var(--soft); font-size: 12px; line-height: 1.45; margin-top: 6px; }
+
+    .assistant-card {
+      margin-top: 16px;
+      border-radius: 22px;
+      background: rgba(47,125,255,.10);
+      border: 1px solid rgba(47,125,255,.22);
+      padding: 18px;
+    }
+
+    .assistant-card strong { display:block; font-size:15px; margin-bottom:6px; }
+    .assistant-card p { color: var(--muted); font-size:13px; line-height:1.55; }
+
+    .floating {
+      position: absolute;
+      left: 0;
+      bottom: 64px;
+      width: 210px;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(0,0,0,.42);
+      border: 1px solid rgba(255,255,255,.13);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.34);
+    }
+
+    .floating .metric { font-size: 34px; font-weight: 950; color: #fff; letter-spacing: -.04em; }
+    .floating .metric span { color: var(--red); }
+    .floating p { color: var(--muted); font-size: 13px; line-height: 1.45; margin-top: 6px; }
+
+    .section { padding: 34px 0 82px; }
+
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .section-title h2 { font-size: clamp(26px, 4vw, 42px); letter-spacing: -.05em; }
+    .section-title p { color: var(--muted); max-width: 460px; line-height: 1.6; }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .feature-card {
+      padding: 22px;
+      min-height: 198px;
+      border-radius: var(--radius-lg);
+      background: var(--panel);
+      border: 1px solid var(--border-soft);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .feature-card:hover { transform: translateY(-3px); background: var(--panel-strong); border-color: rgba(255,255,255,.18); }
+    .feature-icon { font-size: 26px; margin-bottom: 18px; }
+    .feature-card h3 { font-size: 17px; margin-bottom: 9px; }
+    .feature-card p { color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+    .legal-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding: 18px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-soft);
+      background: rgba(255,255,255,.035);
+      margin-bottom: 44px;
+    }
+
+    .legal-card {
+      padding: 26px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.055);
+    }
+
+    .legal-card.primary { background: linear-gradient(135deg, rgba(255,52,71,.22), rgba(255,255,255,.05)); border-color: rgba(255,52,71,.28); }
+    .legal-card .tag { color: var(--soft); text-transform: uppercase; font-size: 11px; letter-spacing: .11em; font-weight: 850; }
+    .legal-card h3 { font-size: 23px; margin-top: 9px; margin-bottom: 10px; letter-spacing: -.03em; }
+    .legal-card p { color: var(--muted); line-height: 1.6; font-size: 14px; margin-bottom: 18px; }
+    .legal-card a { color: #fff; font-weight: 900; font-size: 14px; }
+
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 26px 0 36px;
+      color: var(--soft);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); }
+    .footer-links a:hover { color: #fff; }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; padding-top: 48px; }
+      .hero-copy { text-align: center; margin: 0 auto; }
+      .actions, .trust-row { justify-content: center; }
+      .visual { min-height: auto; }
+      .phone { margin: 0 auto; }
+      .floating { left: 50%; transform: translateX(-50%); bottom: -22px; }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .section { padding-top: 76px; }
+    }
+
+    @media (max-width: 720px) {
+      .page { width: min(100% - 28px, 1180px); }
+      .nav { align-items: flex-start; }
+      .nav-links { gap: 2px; }
+      .nav-links a { padding: 8px 9px; font-size: 12px; }
+      .brand img { width: 150px; height: auto; }
+      .hero { padding-top: 34px; }
+      .subtitle { font-size: 16px; }
+      .phone-screen { min-height: 560px; padding: 18px; }
+      .quick-grid { grid-template-columns: 1fr; }
+      .floating { display: none; }
+      .section-title { display: block; }
+      .section-title p { margin-top: 12px; }
+      .feature-grid, .legal-panel { grid-template-columns: 1fr; }
+      footer { align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="brand" aria-label="CRISIS MATRIX home">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKUAAAAlCAYAAAAjmykCAAAL/ElEQVR4Xu2afXQU1RmHfzOz2eyG3RCTEAQMSUggREgkIChU1BpbT5BW5RxRRC2nfh3wWCt6sC1tbWm1emr9KP0QEI9FhSMWlA+tH6CgAilWAwkQCAkhkYSQkGQXks1md2em573ZO0wms8km6x+pneefvffOvbMLefZ973tnhYSEBBUWFkMIwZLSYqhhSWkx5LCktBhyWFJaDDksKS2GHJaUFkMOS0qLIcegpBQAiAAUACr1BAFQqWdhETtRS0kSihCgQoXMByUJNllGiPcFmkXKKoAa1W0tLHoRtZR63KKIa1QJd0+eimXj5uDE3k2wnT0EVVUw4JtZWBjoV0qKezRhshSHqyQ7pog2TLc7kdHhR1dONibPWo761i7E+eugnjoI8VwdxJZKiL4m3WoLi+jpV0oJYOl6jTMJd9hd8AsCfJ2dCBTmY9gzK3AkYRQeeb0c+2v9SEq0Q5YSoH75CgKHtkCgNK5oyd3CIir6ldIGsD3jU/GJWBLvwunOTsDbhPjiuUh7bzOLhUW/2YmPd1TjodsnQnS4Ubd3A9795EvEt5VCDnZp9xoMCZKEP44bh+KUFMSLtGcFzgQC+PmJE/igtTU8C/htZibuHT1a6xMtwSCO+Hx4tKoK9V0XPkf9rFnstbisDGXt7axtF0UsHzsWC0eOhFOir2L3+/y+thabm5tZn4hlbeHPzmrt1vINqH33Ia1PZN38CpIm/lDrlz6dqrU5Y4ufR8pld7H2+ZpPUPXmreErQM5tb8Gd9V2tb0bdez9FS9nrveaqSgiy34tzJ3fh1PtLIQc62HjCxZchd9FO1uafZ0zRk0ib/gBbc/ivBQh2UFYEBMmOgp8cgxjvhufoVtS882M2PlCikFJACCoecyTiVwEBbbfeBOfsWRAuHgnn94ugQMDO0nqUVTajqa0dXTYXPAffwpvbPkX8+YqYpBwRF4dPCgtxkY2+Gr15uaEBT5w8ydpmUnLOyzJmf/UVmoNB1jcTa/2ll+KapCTW9oRCiBcETbDHqqqwoan7Pz6WtXop6Y9e9lyG1icKltZCsg/T+mZS5j9cCZszmbVJioN/GgtVDrC+UTQzIkmpx99ajaNrZ7P7mklJ8k285zM4krPRUf8FKl8rZuP8S6V0nUfZn3O1zzVQ+pWSp++bHC6s9QYRfHklEhctZNdURYWiqpAkEd5znVi26nN0iU60H9+B7W9vQlxnHRR58Ol7VW4u5qakMKnuPXoUn3u9LCo9M24c5qelIaSqmF1aijq/X5Nyt8eDO44cYeuznE58WFDAou1LDQ34XVhgo1h5CQnYMWUKG7urogIft7Wx9jPZ2bhz5EhU+Hy4/sABNhbLWi4lCUny1by9CJ5j29nYRXm3IPOmNQh1tmrSGaV0Z16LnNv/yeYE2xvhHHEp6ncuR9MXq7Q5nJSCOzF2zgusbbwPwaWktXQPwp1xNXIWbGbt2m1L0Hp4o6mUxLAxl2P8wu0QRBu+/uAxdLWdZJ+N0P+7BkO/UvLzyHSbHR/6RbgffQjO+fMgOB2wTxgPRVFRc9qL0spmbC85ATXOiabK3di96R+wdTVCYWeYfb6FKUk2Gw5Onw6bILBoSFFRz6eFhWzO03V1WH/mjKmUBI9i+nGjWAUuF/5VUMDGrjtwAMd8PtYmmSlaB1UVDeH0H8taLiWlXRLCU/keajbfzcay5q1D0oQ5LO3xFG6UKePGlUjOX8DmKMEO1m7/ugTH35irzeEMRkpi0uKvYB8+VhuPJCXB0zil75DvLPuSxJK2Of1KSXAxV9mHo8jmxJm2VrjnfA9ZWzeya0WPb8WeikbMvzITcrAT2168D3JXR/hQvd/bm3L18OHYMGkSa2eVlCCg9H04byYlRdX906YxOTY2NeGRqio2bhSL5pVNnw63JLHoe7C9HesaG/FRWxu8oZ6RPpa1XEr6Y9MflCJm+Yvj2Vj+w8dZ9KT0GkkmnropMpEEWbe8ysbLXsiB7PeEZ3UzGCnjhqVh0oNlLPrVf/xrNO3/W59S6tM4EWva5gxIynzBhnUJqfB6vHAVF2HCOxsgqkDx8m34YN8J2JOTIR16DVL9Pih0kB7DU54FaWl4NieHtcfs3RsejQyXsktR0C53H+8niCLb25EsPygvZxIRRrGI8U4nXs3LQ6bDwfqcT71e/KiiQvtSxLKWS3ns1SJk3/YWE4xSHUGCBbx1OLn1fky46302ppcgKXeuJuGRl6ahy1Or7UG5QHqilVIJ+qAEO9mYaHdBtMUzuQ79vZCJ3peUxIjL78Ml1/+BtZu/XItTHz0evjJ4opKS4GLeLiVgqc2FFhGQZs/EilFF2FPlQafNDenULsRVb+l+shODkMSclBSsyc1l7YFESiM+WcYDlZXaXo8wE4tDUfXG1FTMS03FZS4X2z70lfr19LdWL2Vq4SJWRVMVTlAqpqjlb64wlYkXEVSEnNh4GxujStyVMRudzUdwdO3V4ZndRCulEUrFVetvgb/lGOv3JaXkSMLkxaWs2iao8KpcdwN8jQfDMwZH1FISXMy5ccNwt09B0sRcLBh3K74+7UG8Zz+kU7tjStl6aL94eMYM1l5SWYktZy9UrgTfU/6lvh6rGxo0KUu8Xiytrmbp/+nsbBYlaa9XTUdZYYxiTXW7kT9sGGr9fuzyXEiD80aMwMrx3emVR+tY1uqllOwu5NyxhQklSPEsBdK4My3fVCZjZW6kYvWV8Ld2b0+IaKVsLV+Pxj3PIXXqPUibsbhXCu5LSn4P+jfI/nNwpdNnuFC5DxZTKUm+8BNs9jyGy8h/iEHJ8RJVxM1ZudicNBn1FbsgdjV3/ziDwW8Z2xMdXqRQ9U0S1ITF+mVmJhaPHt1DOLM9JVXFVB0bix+jWI+mp2Npenqvo6MHx4zBLzIy2Ptk7NsX81q9lBRNeFFBUGSqWPMdU5l4ZU407FoBJXAhQo+69gkm65l9z6Nh95PauNl99Bj3lPozRv0+M5KUFOnTb3hWi45KoAMT7/2c7UeNxdNAMZVSDxeSvxL87LIHghRO2TROvxyiZmxyUjr8bOpUVkQQdAboFEXtEN3snFIvoL5YWnD4MNvjEUaxKOKWTJumFStUoEiCwMaJ7S0teOBYdzqLZa1RytHXLMfImY+wMS6VmUy8Mufi6ol0zew+eoxSEmkzlmDMdSt6HIqbSakviPTrR121DBdftYytpxOBjvr/sPGB0kNKrs400YYpYhw2yX54VBXjRQnHFRnDBRFOCGhUZQj2JECVoSgBID4Zgu909z0Ekf0wg1AdKRD8Law9WEjMlRMmYGZiItujEVTI0NOS1xobw7PMpSS25udjmtvd51kjQcXK2rw8ZOuKFSqaNjU3Y3lNTb+FTjRrjVI6knOQd38JG+Pp1ygTRTBemZtFIH0U5fcljPcxYiYlvdekJQeYdPxoxyglzcldtIMd/1Cqrlh9BbvGybv/32wrQkXbkdVXDiqNa1JyIccLEuYLdmxSA6x6TYUIURDQrMgQ6EkFRHQoIZSn5MPnSIMQ8EKNc0FqLQdECUpSHiRvJSDaoAo2CIFzgBqCEPIBoQv7usGQ4XCwaGk8avkmoSOeUXZ7j/PFaIllrUW3g4QmJU/PM8U4XAEJLyh+3GNzsufebkGEXQVaoMIhSHDKIbzhugSnE7O6b+JrpFIMin04hGA7REGBSk9y5E6ooh1yYg7ia7eEf5wx8DRu8e2ES2ikV/qm/eJCMR5BqOgUgFIlhAIxju0PkwURJwRgtCxjjzsdJwNeSKEOhBInAPZECIE2QJGBOCdEbzVkRyrbdyiSA9K5GgjBc7qYbPH/RiQJjUQsdOhHBV26ox1e3PAbmy7imJ1TfkNHRRb/e0QjI20NtbaZlJFimX480hxzBjbb4ttBJBn1AhqhK6ZSWlgMhkiqmUnYe+TCmCWlRcyYCUYYZTTOi9S3pLSICaNYRF8yGuf3uBZeZ0lpMWh6CaYvVrRWH22T+fRqSWkRNXqh9ESSi6ON8UjI++FXjhUpLaLGKA+nLxm11z5ENL2mqlaktOgbvUQcvYxED6nCr6bCGcb5GD+/pmts3DoSsoiEJk0YvYz6a7zNhDKRrteYQULW5tcEAf8FItGSKA/klgIAAAAASUVORK5CYII=" alt="CRISIS MATRIX" width="165" height="37" />
+      </a>
+      <div class="nav-links" aria-label="Legal links">
+        <a href="#features">Features</a>
+        <a href="terms-of-service.html">Terms</a>
+        <a href="CrisisMatrix_Privacy_Policy_v2.html">Privacy</a>
+      </div>
+    </nav>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse" aria-hidden="true"></span> Emergency Preparedness App</div>
+        <h1 id="hero-title">Be ready before <span>crisis strikes.</span></h1>
+        <p class="subtitle">CRISIS MATRIX brings AI emergency guidance, offline survival checklists, first aid support, SOS workflows, and country emergency numbers into one clean, fast, mobile-first experience.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#legal">View legal pages <span aria-hidden="true">→</span></a>
+          <a class="btn btn-secondary" href="mailto:quadros.clifford@gmail.com">Contact founder</a>
+        </div>
+        <div class="trust-row" aria-label="Highlights">
+          <span class="trust-pill">🤖 ARIA AI Assistant</span>
+          <span class="trust-pill">📡 Offline-first guides</span>
+          <span class="trust-pill">🌍 Global emergency numbers</span>
+        </div>
+      </div>
+
+      <div class="visual" aria-label="App preview">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="screen-header">
+              <div class="mini-logo"><img src="data:image/png;base64,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" alt="CRISIS MATRIX" /></div>
+              <div class="status">READY</div>
+            </div>
+
+            <div class="sos-card">
+              <div class="sos-label">Priority response</div>
+              <div class="sos-title">Emergency mode</div>
+              <p class="sos-text">Step-by-step prompts for urgent situations, with fast access to key contacts, first aid actions, and local emergency numbers.</p>
+            </div>
+
+            <div class="quick-grid">
+              <div class="quick">
+                <div class="quick-icon">🆘</div>
+                <div class="quick-title">SOS Broadcast</div>
+                <div class="quick-copy">Prepare alerts and share critical details when time matters.</div>
+              </div>
+              <div class="quick">
+                <div class="quick-icon">🏥</div>
+                <div class="quick-title">First Aid</div>
+                <div class="quick-copy">Clear actions for common injuries and emergency response.</div>
+              </div>
+              <div class="quick">
+                <div class="quick-icon">🎒</div>
+                <div class="quick-title">72-Hour Kit</div>
+                <div class="quick-copy">Build a family-ready checklist for the first critical days.</div>
+              </div>
+              <div class="quick">
+                <div class="quick-icon">🧭</div>
+                <div class="quick-title">Survival Guides</div>
+                <div class="quick-copy">Accessible guidance designed for stressful moments.</div>
+              </div>
+            </div>
+
+            <div class="assistant-card">
+              <strong>ARIA AI guidance</strong>
+              <p>Ask practical questions and receive structured emergency-preparedness guidance with clear next steps.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="floating">
+          <div class="metric">82<span>+</span></div>
+          <p>Country emergency-number coverage planned for global users and travellers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="section-title">
+        <h2 id="features-title">Built for calm action.</h2>
+        <p>A polished landing page that keeps the brand serious, trustworthy, and app-ready while highlighting the most important Crisis Matrix capabilities.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>ARIA AI Assistant</h3>
+          <p>AI-supported emergency-preparedness guidance for practical questions and next steps.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">📡</div>
+          <h3>Offline First</h3>
+          <p>Keep essential guides accessible when mobile data or Wi-Fi is unreliable.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">🆘</div>
+          <h3>SOS Workflows</h3>
+          <p>Designed to help users act quickly, share key information, and reduce confusion.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>Global Use</h3>
+          <p>Emergency-number support and travel-ready guidance for UAE and international users.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="legal-panel" id="legal" aria-label="Legal documents">
+      <article class="legal-card primary">
+        <div class="tag">Legal document</div>
+        <h3>Terms of Service</h3>
+        <p>Usage rules, emergency guidance disclaimers, liability limitations, and app terms for CRISIS MATRIX users.</p>
+        <a href="terms-of-service.html">Open terms →</a>
+      </article>
+      <article class="legal-card">
+        <div class="tag">Data protection</div>
+        <h3>Privacy Policy</h3>
+        <p>How user data is collected, used, protected, retained, and managed across the CRISIS MATRIX experience.</p>
+        <a href="CrisisMatrix_Privacy_Policy_v2.html">Open privacy policy →</a>
+      </article>
+    </section>
+
+    <footer>
+      <p>© 2026 Dezign IQ Technologies FZ-LLC · Ras Al Khaimah, UAE</p>
+      <div class="footer-links">
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="CrisisMatrix_Privacy_Policy_v2.html">Privacy Policy</a>
+        <a href="mailto:quadros.clifford@gmail.com">Contact</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

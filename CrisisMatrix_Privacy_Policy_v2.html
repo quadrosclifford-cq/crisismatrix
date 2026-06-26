@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — CrisisMatrix</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --orange:#f97316; --green:#22c55e; --blue:#3b82f6; --red:#ef4444;
+    --amber:#f59e0b; --purple:#a855f7;
+    --bg:#0a0a0a; --surface:#141414; --card:#1e1e1e; --border:#2a2a2a;
+    --text:#e5e5e5; --muted:#9ca3af; --white:#ffffff;
+  }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.75; font-size:15px; }
+  nav { position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.95);
+    backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
+    padding:14px 32px;display:flex;align-items:center;justify-content:space-between; }
+  .nav-brand { font-size:18px;font-weight:700;color:var(--white); }
+  .nav-brand span { color:var(--orange); }
+  .nav-badge { font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;
+    border:1px solid var(--orange);color:var(--orange);letter-spacing:0.5px; }
+  .hero { background:var(--surface);border-bottom:1px solid var(--border);
+    padding:60px 32px 48px;text-align:center; }
+  .hero-eyebrow { font-size:11px;font-weight:600;letter-spacing:2px;color:var(--orange);
+    text-transform:uppercase;margin-bottom:16px; }
+  .hero h1 { font-size:clamp(28px,5vw,44px);font-weight:700;color:var(--white);
+    margin-bottom:16px;line-height:1.2; }
+  .hero p { font-size:16px;color:var(--muted);max-width:620px;margin:0 auto 28px; }
+  .hero-meta { display:flex;gap:24px;justify-content:center;flex-wrap:wrap;
+    font-size:13px;color:var(--muted); }
+  .hero-meta span { display:flex;align-items:center;gap:6px; }
+  .dot { width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block; }
+  .page { max-width:860px;margin:0 auto;padding:0 24px 80px; }
+  .toc { background:var(--card);border:1px solid var(--border);border-radius:12px;
+    padding:28px 32px;margin:40px 0; }
+  .toc h2 { font-size:14px;font-weight:600;color:var(--muted);letter-spacing:1px;
+    text-transform:uppercase;margin-bottom:16px; }
+  .toc ol { padding-left:20px;display:grid;grid-template-columns:1fr 1fr;gap:6px; }
+  .toc a { color:var(--muted);text-decoration:none;font-size:14px; }
+  .toc a:hover { color:var(--orange); }
+  .section { margin:52px 0; }
+  .section-header { display:flex;align-items:center;gap:16px;margin-bottom:24px;
+    padding-bottom:16px;border-bottom:1px solid var(--border); }
+  .section-num { width:36px;height:36px;border-radius:10px;background:var(--orange);
+    display:flex;align-items:center;justify-content:center;font-size:15px;
+    font-weight:700;color:white;flex-shrink:0; }
+  h2 { font-size:22px;font-weight:700;color:var(--white); }
+  h3 { font-size:16px;font-weight:600;color:var(--white);margin:24px 0 10px; }
+  p { color:var(--muted);margin-bottom:14px; }
+  ul,ol { margin:12px 0 18px 24px;color:var(--muted); }
+  li { margin-bottom:8px;line-height:1.6; }
+  strong { color:var(--white); }
+  .callout { border-radius:10px;padding:16px 20px;margin:20px 0;
+    display:flex;gap:14px;align-items:flex-start;border:1px solid; }
+  .callout-icon { font-size:20px;flex-shrink:0;margin-top:2px; }
+  .callout-body { font-size:14px;line-height:1.65;color:var(--muted); }
+  .callout.orange { background:rgba(249,115,22,0.1);border-color:rgba(249,115,22,0.3); }
+  .callout.red { background:rgba(239,68,68,0.1);border-color:rgba(239,68,68,0.3); }
+  .callout.blue { background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.3); }
+  .callout.green { background:rgba(34,197,94,0.1);border-color:rgba(34,197,94,0.3); }
+  .callout.amber { background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.3); }
+  .callout.purple { background:rgba(168,85,247,0.1);border-color:rgba(168,85,247,0.3); }
+  .badge { display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;
+    border-radius:20px;letter-spacing:0.5px;margin-right:6px; }
+  .badge-new { background:rgba(34,197,94,0.2);color:var(--green);border:1px solid rgba(34,197,94,0.4); }
+  .badge-updated { background:rgba(249,115,22,0.2);color:var(--orange);border:1px solid rgba(249,115,22,0.4); }
+  .badge-ai { background:rgba(168,85,247,0.2);color:var(--purple);border:1px solid rgba(168,85,247,0.4); }
+  .data-table { width:100%;border-collapse:collapse;margin:16px 0;font-size:14px; }
+  .data-table th { background:var(--card);padding:10px 14px;text-align:left;
+    font-size:12px;font-weight:600;color:var(--muted);letter-spacing:0.5px;
+    border-bottom:1px solid var(--border); }
+  .data-table td { padding:10px 14px;border-bottom:1px solid var(--border);
+    color:var(--muted);vertical-align:top;line-height:1.55; }
+  .data-table tr:last-child td { border-bottom:none; }
+  .rights-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:14px;margin:16px 0; }
+  .right-card { background:var(--card);border:1px solid var(--border);border-radius:10px;
+    padding:16px; }
+  .right-card h4 { font-size:14px;font-weight:600;color:var(--white);margin-bottom:6px; }
+  .right-card p { font-size:13px;margin:0; }
+  footer { background:var(--surface);border-top:1px solid var(--border);
+    padding:40px 32px;text-align:center; }
+  footer p { font-size:13px;color:var(--muted);margin:4px 0; }
+  .eu-ai-box { background:rgba(168,85,247,0.12);border:1.5px solid rgba(168,85,247,0.4);
+    border-radius:12px;padding:20px 24px;margin:20px 0; }
+  .eu-ai-box h4 { color:var(--purple);font-size:15px;font-weight:700;margin-bottom:10px; }
+  .eu-ai-box p { color:var(--muted);font-size:14px; }
+  @media(max-width:600px) { .toc ol{grid-template-columns:1fr} nav{padding:12px 16px}
+    .hero{padding:40px 16px 32px} .section-header{flex-direction:column;align-items:flex-start} }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">CRISIS<span>MATRIX</span></div>
+  <span class="nav-badge">PRIVACY POLICY</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">Legal Document</div>
+  <h1>Privacy Policy</h1>
+  <p>This policy explains how CrisisMatrix collects, processes, and protects your personal information in full compliance with UAE PDPL, GDPR, and the EU AI Act.</p>
+  <div class="hero-meta">
+    <span><span class="dot"></span> Version 2.1</span>
+    <span><span class="dot"></span> Effective: 1 July 2026</span>
+    <span><span class="dot"></span> UAE PDPL compliant</span>
+    <span><span class="dot"></span> GDPR compliant</span>
+    <span><span class="dot"></span> EU AI Act Art. 50 compliant</span>
+  </div>
+</div>
+
+<div class="page">
+
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#s1">Who we are</a></li>
+      <li><a href="#s2">What data we collect</a></li>
+      <li><a href="#s3">How we use your data</a></li>
+      <li><a href="#s4">AI system — ARIA disclosure (EU AI Act)</a></li>
+      <li><a href="#s5">Location data &amp; emergency numbers</a></li>
+      <li><a href="#s6">Emergency features</a></li>
+      <li><a href="#s7">ARIA AI assistant</a></li>
+      <li><a href="#s8">Family Safety Network</a></li>
+      <li><a href="#s9">Medical ID &amp; health information</a></li>
+      <li><a href="#s10">Data sharing &amp; third parties</a></li>
+      <li><a href="#s11">International data transfers</a></li>
+      <li><a href="#s12">Data storage &amp; security</a></li>
+      <li><a href="#s13">Data retention &amp; deletion</a></li>
+      <li><a href="#s14">Your rights</a></li>
+      <li><a href="#s15">Children's privacy</a></li>
+      <li><a href="#s16">Changes to this policy</a></li>
+      <li><a href="#s17">Contact us</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>Who we are</h2>
+    </div>
+    <p><strong>CrisisMatrix</strong> ("<strong>we</strong>", "<strong>our</strong>", "<strong>us</strong>") is an emergency preparedness mobile application operated by Clifford Quadros, operating under Dezign IQ Technologies FZ-LLC (RAKEZ), Ras Al Khaimah, United Arab Emirates (<strong>UAE</strong>). Our registered contact email is <strong>quadros.clifford@gmail.com</strong>.</p>
+    <p>CrisisMatrix is available via the Apple App Store and Google Play Store under the bundle identifier <strong>com.crisismatrix.app</strong> and accessible at <strong>crisismatrix.com</strong>.</p>
+    <p>We are a <strong>data controller</strong> under the EU General Data Protection Regulation (GDPR) and the UAE Federal Decree-Law No. 45 of 2021 on the Protection of Personal Data (UAE PDPL) in respect of personal data we process about you.</p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>What data we collect</h2>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Data type</th><th>What it includes</th><th>Where stored</th><th>Who sees it</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Account data</strong> (optional)</td><td>Email address, username, hashed password (if you create an account)</td><td>Our secure server (Replit/Supabase)</td><td>You only</td></tr>
+        <tr><td><strong>Medical ID</strong> <span class="badge badge-updated">Sensitive</span></td><td>Blood type, allergies, medications, medical conditions, emergency contacts you enter voluntarily</td><td>On-device only (not uploaded to server)</td><td>You + first responders via lock screen</td></tr>
+        <tr><td><strong>Emergency contacts</strong></td><td>Names and phone numbers of your SOS contacts</td><td>On-device + our server (for SOS delivery)</td><td>Used only for SOS broadcasts</td></tr>
+        <tr><td><strong>Location data (SOS)</strong></td><td>GPS coordinates at moment of SOS activation</td><td>Transmitted once to contacts; not retained on server beyond 90 days</td><td>Your designated SOS contacts only</td></tr>
+        <tr><td><strong>Location data (country detection)</strong> <span class="badge badge-new">New</span></td><td>GPS coordinates used to determine ISO country code for emergency number display</td><td>On-device only (AsyncStorage, max 24 hours). Never transmitted to our servers.</td><td>Not shared — device-local only</td></tr>
+        <tr><td><strong>ARIA conversations</strong></td><td>Text queries sent to ARIA when online mode is used</td><td>Transmitted to Anthropic API (USA); not stored by us</td><td>Anthropic (under DPA)</td></tr>
+        <tr><td><strong>Kit Builder data</strong></td><td>Items marked as owned in your 72-hour kit checklist</td><td>On-device only</td><td>You only</td></tr>
+        <tr><td><strong>Family group data</strong> <span class="badge badge-new">New</span></td><td>Your name, relationship label, check-in status, and group membership when you join a Family Safety Network</td><td>Our secure server</td><td>Other members of your group</td></tr>
+        <tr><td><strong>Device data</strong></td><td>Device model, OS version, app version, crash logs</td><td>Aggregated analytics only; no personal identifiers</td><td>We (for bug fixes only)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2>How we use your data</h2>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Purpose</th><th>Data used</th><th>Legal basis (GDPR)</th><th>Legal basis (UAE PDPL)</th></tr></thead>
+      <tbody>
+        <tr><td>Deliver SOS GPS broadcast to contacts</td><td>Location, emergency contacts</td><td>Vital interests (Art. 6(1)(d))</td><td>Emergency response exception</td></tr>
+        <tr><td>Display local emergency numbers <span class="badge badge-new">New</span></td><td>GPS → ISO country code (on-device only)</td><td>Legitimate interests (Art. 6(1)(f))</td><td>Legitimate interests</td></tr>
+        <tr><td>Power ARIA AI assistant</td><td>Text queries</td><td>Consent (Art. 6(1)(a))</td><td>Consent</td></tr>
+        <tr><td>Store Medical ID for first responders</td><td>Health data</td><td>Vital interests (Art. 9(2)(c))</td><td>Health data provision exception</td></tr>
+        <tr><td>Family group status sharing <span class="badge badge-new">New</span></td><td>Name, status, group membership</td><td>Consent (Art. 6(1)(a))</td><td>Consent</td></tr>
+        <tr><td>Improve app performance</td><td>Anonymised crash data</td><td>Legitimate interests (Art. 6(1)(f))</td><td>Legitimate interests</td></tr>
+        <tr><td>Legal compliance</td><td>Account records</td><td>Legal obligation (Art. 6(1)(c))</td><td>Legal obligation</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 4 — EU AI ACT -->
+  <div class="section" id="s4">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2>AI system disclosure <span class="badge badge-ai">EU AI Act Article 50</span></h2>
+    </div>
+
+    <div class="eu-ai-box">
+      <h4>⚡ AI Transparency — Required Disclosure under EU AI Act Article 50</h4>
+      <p><strong>ARIA is an AI system.</strong> ARIA (AI Response Intelligence Assistant) is powered by Anthropic's Claude large language model. It is not a licensed medical professional, emergency responder, or first aid instructor. ARIA responses are generated by artificial intelligence and may contain errors, hallucinations, or outdated information.</p>
+    </div>
+
+    <p>The EU Artificial Intelligence Act (Regulation EU 2024/1689) applies to AI systems that interact with natural persons, including CrisisMatrix users in the European Union and European Economic Area. The AI Act came into enforcement with respect to general-purpose AI systems on <strong>2 August 2026</strong>.</p>
+
+    <h3>What this means for ARIA</h3>
+    <ul>
+      <li><strong>AI identity disclosure:</strong> Every ARIA interface within CrisisMatrix displays a persistent label: "ARIA is an AI assistant — not a licensed medical or emergency professional." This is mandatory under Article 50(1) of the EU AI Act.</li>
+      <li><strong>No human equivalent:</strong> ARIA does not replace trained first aid instruction, emergency services professionals, or qualified medical advice.</li>
+      <li><strong>Known limitations:</strong> ARIA may produce incorrect, incomplete, or outdated responses. In a genuine emergency, always call your local emergency services directly. Never rely solely on AI guidance for life-threatening situations.</li>
+      <li><strong>Risk classification:</strong> We have assessed ARIA as a general-purpose AI system under the EU AI Act. We continue to monitor regulatory guidance on AI systems providing emergency and safety information.</li>
+    </ul>
+
+    <h3>AI system transparency information</h3>
+    <ul>
+      <li><strong>Provider:</strong> Anthropic, PBC (San Francisco, USA)</li>
+      <li><strong>Model:</strong> Claude (claude-sonnet-4-6 or equivalent current model)</li>
+      <li><strong>Data sent:</strong> Your text queries in online mode. No audio, images, or identifying information is sent unless you include it in your query.</li>
+      <li><strong>Offline mode:</strong> When offline, ARIA uses a local retrieval-augmented generation (RAG) knowledge base stored on your device. No data is transmitted.</li>
+      <li><strong>Retention by Anthropic:</strong> Anthropic processes queries under its API Data Processing Agreement. Anthropic does not retain API queries for model training by default. See anthropic.com/privacy for details.</li>
+    </ul>
+
+    <div class="callout purple">
+      <span class="callout-icon">🤖</span>
+      <div class="callout-body">ARIA responses are never reviewed by a licensed medical professional before delivery. Always call local emergency services ({local emergency number}) in any life-threatening situation — do not wait for an AI response.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 5 — LOCATION -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2>Location data &amp; emergency number detection <span class="badge badge-updated">Updated</span></h2>
+    </div>
+
+    <p>CrisisMatrix uses your device's location for <strong>two distinct purposes</strong>, each described separately below.</p>
+
+    <h3>5.1 — SOS GPS broadcast</h3>
+    <p>When you activate the SOS feature, your device's GPS coordinates at that moment are transmitted once to your designated emergency contacts via our server. This transmission occurs only when you actively hold the SOS button and confirm the broadcast. SOS location data is retained on our servers for a maximum of 90 days for audit purposes, after which it is permanently deleted.</p>
+
+    <h3>5.2 — Emergency number country detection <span class="badge badge-new">New</span></h3>
+    <p>CrisisMatrix uses your approximate GPS location to determine the ISO country code of your current location. This is used exclusively to display the correct local emergency telephone numbers (police, ambulance, fire) within the app.</p>
+    <ul>
+      <li><strong>What is collected:</strong> GPS coordinates are reverse-geocoded to an ISO 3166-1 alpha-2 country code (e.g., "AE" for UAE, "GB" for UK).</li>
+      <li><strong>Where it is stored:</strong> The country code is stored exclusively on your device in AsyncStorage (local device storage) for up to 24 hours. It is never transmitted to our servers or any third party.</li>
+      <li><strong>When it is refreshed:</strong> The country detection runs on app launch and when the app returns to the foreground, if the cached result is older than 24 hours.</li>
+      <li><strong>Manual override:</strong> You may manually set your country at any time from the Profile screen. A manual override overrides GPS detection until you clear it.</li>
+      <li><strong>If permission is denied:</strong> If you deny location permission, the app displays the international emergency number 112 (which works on most GSM networks worldwide) as a default.</li>
+    </ul>
+
+    <h3>5.3 — How location permission works</h3>
+    <p>CrisisMatrix requests "when in use" (foreground) location permission only. We do not request background location tracking. Location permission is requested when you first open the app. You may revoke this permission at any time in your device Settings → Privacy → Location Services → CrisisMatrix. Revoking location permission will disable the SOS broadcast feature and revert emergency number display to the 112 international fallback.</p>
+  </div>
+
+  <!-- SECTION 6 — EMERGENCY FEATURES -->
+  <div class="section" id="s6">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <h2>Emergency features <span class="badge badge-new">New</span></h2>
+    </div>
+
+    <h3>6.1 — SOS broadcast</h3>
+    <p>The SOS feature is a <strong>contact notification tool</strong>. When activated, it sends a single GPS location broadcast to your pre-designated emergency contacts. It does not contact emergency services (police, ambulance, or fire services) on your behalf. You are responsible for calling emergency services directly.</p>
+
+    <h3>6.2 — Emergency call button</h3>
+    <p>The app displays a "Call Emergency Services" button that shows the detected local emergency number for your country. When tapped:</p>
+    <ul>
+      <li>The app opens your device's <strong>native telephone dialler</strong> pre-filled with the relevant emergency number.</li>
+      <li>The app does <strong>not</strong> initiate, make, or complete a telephone call on your behalf. You initiate the call manually.</li>
+      <li>No call data is transmitted to or stored by CrisisMatrix.</li>
+      <li>This feature is provided for convenience only. If you are in a genuine emergency, dial your local emergency number directly.</li>
+    </ul>
+
+    <div class="callout red">
+      <span class="callout-icon">🚨</span>
+      <div class="callout-body"><strong>CrisisMatrix does not contact emergency services.</strong> In any life-threatening situation, always call your local emergency services directly. Do not rely on the SOS broadcast or any app feature as a substitute for calling emergency services.</div>
+    </div>
+
+    <h3>6.3 — Emergency number accuracy</h3>
+    <p>The emergency numbers displayed in the app are sourced from publicly available government and international telecommunications databases and are updated periodically. We do not guarantee the accuracy or currency of emergency numbers. Emergency numbers can change. Always verify critical emergency numbers through official government sources for your location.</p>
+  </div>
+
+  <!-- SECTION 7 — ARIA -->
+  <div class="section" id="s7">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <h2>ARIA AI assistant</h2>
+    </div>
+
+    <h3>Online mode (Claude API)</h3>
+    <p>When you use ARIA in online mode, your text queries are transmitted over an encrypted HTTPS connection to Anthropic's Claude API servers located in the United States. Anthropic processes these queries under a Data Processing Agreement (DPA) with us. Queries are used solely to generate your response and are not used by Anthropic for model training under the standard API tier.</p>
+
+    <h3>Offline mode (on-device RAG)</h3>
+    <p>When your device has no internet connection, ARIA operates using a local Retrieval-Augmented Generation (RAG) knowledge base stored entirely on your device. No query data is transmitted anywhere in offline mode.</p>
+
+    <h3>Conversation history</h3>
+    <p>ARIA does not retain conversation history between sessions. Each conversation starts fresh. We do not store ARIA conversation transcripts on our servers.</p>
+
+    <h3>EU AI Act compliance</h3>
+    <p>See Section 4 for full AI system transparency disclosure required under EU AI Act Article 50.</p>
+  </div>
+
+  <!-- SECTION 8 — FAMILY -->
+  <div class="section" id="s8">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <h2>Family Safety Network <span class="badge badge-new">New</span></h2>
+    </div>
+
+    <p>The Family Safety Network is a voluntary opt-in feature that allows a group of people to share safety status during emergencies. The following applies when you create or join a Family group:</p>
+
+    <h3>8.1 — What is shared within your group</h3>
+    <ul>
+      <li>Your <strong>display name</strong> (as you enter it)</li>
+      <li>Your <strong>relationship label</strong> (e.g., "Parent", "Spouse")</li>
+      <li>Your <strong>check-in status</strong> ("Safe", "Need Help", or "Unknown")</li>
+      <li>Your <strong>last check-in timestamp</strong></li>
+      <li>Your <strong>GPS location</strong> (only when you actively share a status update or when you explicitly enable real-time location sharing)</li>
+    </ul>
+
+    <h3>8.2 — Consent and group membership</h3>
+    <p>You may only add individuals to a Family group who have <strong>voluntarily agreed</strong> to join. Adding individuals to a group without their explicit consent may violate their privacy rights under UAE PDPL and GDPR. Group join codes must only be shared with individuals who have consented to participate.</p>
+
+    <h3>8.3 — Data stored on our servers</h3>
+    <p>Family group membership, status, and group configuration are stored on our secure servers for the duration of the group's existence. When you leave a group, your member record is deleted within 30 days. When a group is dissolved by the group creator, all member data associated with that group is deleted within 30 days.</p>
+
+    <h3>8.4 — Visibility</h3>
+    <p>Family group data is visible only to members of your specific group. It is not visible to other CrisisMatrix users, the general public, or to us except for technical support purposes.</p>
+  </div>
+
+  <!-- SECTION 9 — MEDICAL -->
+  <div class="section" id="s9">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <h2>Medical ID &amp; health information <span class="badge badge-updated">Updated</span></h2>
+    </div>
+
+    <p>Your Medical ID contains sensitive health information including blood type, allergies, medications, and medical conditions. This constitutes a <strong>special category of personal data</strong> under GDPR (Article 9) and sensitive personal data under UAE PDPL.</p>
+
+    <h3>Storage</h3>
+    <p>Your Medical ID data is stored exclusively on your device using encrypted local storage. It is never transmitted to our servers or any third party. The Medical ID is designed to be accessible from your device's lock screen to first responders without requiring your passcode.</p>
+
+    <h3>First aid guide content — important disclaimer</h3>
+    <div class="callout amber">
+      <span class="callout-icon">⚠️</span>
+      <div class="callout-body"><strong>The CPR, AED, Recovery Position, and first aid guides in CrisisMatrix are for reference and educational purposes only.</strong> They do not constitute professional medical training or advice. Following these guides does not qualify you to perform these procedures. We strongly recommend completing a certified first aid and CPR course from an accredited provider (Red Cross, St John Ambulance, or equivalent). CrisisMatrix is not liable for outcomes resulting from following guide content.</div>
+    </div>
+
+    <h3>Accuracy of guide content</h3>
+    <p>First aid and emergency guide content is reviewed periodically against current WHO, Red Cross, Resuscitation Council, and FEMA guidelines. However, medical and emergency protocols change. Always verify critical procedures with current certified training and local professional guidance.</p>
+  </div>
+
+  <!-- SECTION 10 — DATA SHARING -->
+  <div class="section" id="s10">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <h2>Data sharing &amp; third parties</h2>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Third party</th><th>Purpose</th><th>Data shared</th><th>Safeguards</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Anthropic, PBC</strong> (USA)</td><td>ARIA AI responses</td><td>Text queries (online mode only)</td><td>DPA; SCCs for EU transfers</td></tr>
+        <tr><td><strong>Supabase</strong> (server infrastructure)</td><td>Account, SOS, Family group data</td><td>Account records, SOS logs, Family group data</td><td>DPA; EU data residency available</td></tr>
+        <tr><td><strong>Apple / Google</strong></td><td>App distribution; in-app purchases (Phase 2)</td><td>Purchase receipts (Phase 2 only)</td><td>Apple/Google platform agreements</td></tr>
+        <tr><td><strong>RevenueCat</strong> (Phase 2)</td><td>Subscription management</td><td>Purchase records, subscription status</td><td>DPA; SOC 2 Type II certified</td></tr>
+        <tr><td><strong>Emergency contacts (your chosen contacts)</strong></td><td>SOS notification</td><td>Your GPS location at SOS activation</td><td>You choose who receives this</td></tr>
+      </tbody>
+    </table>
+    <p>We do not sell your personal data. We do not share personal data with advertisers. CrisisMatrix is ad-free.</p>
+  </div>
+
+  <!-- SECTION 11 — TRANSFERS -->
+  <div class="section" id="s11">
+    <div class="section-header">
+      <div class="section-num">11</div>
+      <h2>International data transfers</h2>
+    </div>
+    <p>CrisisMatrix is operated from the UAE. When EU/EEA users use ARIA in online mode, their query text is transferred to Anthropic's servers in the United States. The UAE does not currently have an EU adequacy decision. We rely on <strong>Standard Contractual Clauses (SCCs)</strong> under GDPR Article 46(2)(c) for transfers of EU personal data to the USA.</p>
+    <p>Anthropic's Data Processing Addendum (DPA) incorporating SCCs is available at <strong>anthropic.com/legal</strong>. Our DPA with Anthropic is available upon request at <strong>quadros.clifford@gmail.com</strong>.</p>
+    <p>Family group and account data held on Supabase servers is subject to Supabase's data processing terms and the region of server deployment selected.</p>
+  </div>
+
+  <!-- SECTION 12 — SECURITY -->
+  <div class="section" id="s12">
+    <div class="section-header">
+      <div class="section-num">12</div>
+      <h2>Data storage &amp; security</h2>
+    </div>
+    <h3>On-device storage</h3>
+    <p>Medical ID data, Kit Builder data, and emergency number country detection results are stored on your device using iOS Keychain / Android EncryptedSharedPreferences / AsyncStorage as appropriate. This data is only accessible by the CrisisMatrix app.</p>
+    <h3>Server-side storage</h3>
+    <p>Account data, SOS logs (max 90 days), and Family group data are stored on our servers using AES-256 encryption at rest and TLS 1.3 encryption in transit.</p>
+    <h3>API communication</h3>
+    <p>All communication between the app and our servers, and between our servers and Anthropic's API, uses TLS 1.3 encryption.</p>
+    <h3>Security incidents</h3>
+    <p>In the event of a data breach involving personal data, we will notify affected users and relevant supervisory authorities (UAE Data Office; relevant EU supervisory authority for EU users) within 72 hours of becoming aware of the breach, as required by GDPR Article 33 and UAE PDPL.</p>
+  </div>
+
+  <!-- SECTION 13 — RETENTION -->
+  <div class="section" id="s13">
+    <div class="section-header">
+      <div class="section-num">13</div>
+      <h2>Data retention &amp; deletion</h2>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Data type</th><th>Retention period</th><th>How to delete</th></tr></thead>
+      <tbody>
+        <tr><td>Medical ID</td><td>Until you delete it or uninstall the app</td><td>Profile → Medical ID → Delete</td></tr>
+        <tr><td>Emergency contacts</td><td>Until you remove them</td><td>Profile → Contacts → Remove</td></tr>
+        <tr><td>SOS event logs</td><td>90 days from event</td><td>Auto-deleted; request earlier deletion via email</td></tr>
+        <tr><td>ARIA conversation data</td><td>Not retained (session only)</td><td>N/A — not stored</td></tr>
+        <tr><td>Country code (GPS detection)</td><td>Max 24 hours on device</td><td>Automatically expires; or clear in Profile</td></tr>
+        <tr><td>Family group data</td><td>Until you leave the group (then 30 days)</td><td>Family → Leave Group</td></tr>
+        <tr><td>Account data</td><td>Until account deletion</td><td>Profile → Account → Delete Account</td></tr>
+        <tr><td>Anonymised analytics</td><td>Up to 2 years (aggregated, no personal data)</td><td>Cannot be individually deleted (no personal data)</td></tr>
+      </tbody>
+    </table>
+    <p>To request deletion of all your personal data, contact us at <strong>quadros.clifford@gmail.com</strong> with subject line "Data Deletion Request". We will process your request within 30 days as required by GDPR Article 17 and UAE PDPL.</p>
+  </div>
+
+  <!-- SECTION 14 — RIGHTS -->
+  <div class="section" id="s14">
+    <div class="section-header">
+      <div class="section-num">14</div>
+      <h2>Your rights</h2>
+    </div>
+    <p>Depending on your location, you have the following rights regarding your personal data:</p>
+    <div class="rights-grid">
+      <div class="right-card">
+        <h4>Right of access</h4>
+        <p>Request a copy of all personal data we hold about you.</p>
+      </div>
+      <div class="right-card">
+        <h4>Right to rectification</h4>
+        <p>Request correction of inaccurate or incomplete personal data.</p>
+      </div>
+      <div class="right-card">
+        <h4>Right to erasure</h4>
+        <p>Request deletion of your personal data ("right to be forgotten").</p>
+      </div>
+      <div class="right-card">
+        <h4>Right to portability</h4>
+        <p>Request your data in a structured, machine-readable format.</p>
+      </div>
+      <div class="right-card">
+        <h4>Right to object</h4>
+        <p>Object to processing based on legitimate interests.</p>
+      </div>
+      <div class="right-card">
+        <h4>Right to restrict</h4>
+        <p>Request restriction of processing in certain circumstances.</p>
+      </div>
+      <div class="right-card">
+        <h4>Right to withdraw consent</h4>
+        <p>Withdraw consent at any time for consent-based processing. Withdrawal does not affect past processing.</p>
+      </div>
+      <div class="right-card">
+        <h4>Right to lodge a complaint</h4>
+        <p>EU users: lodge a complaint with your national supervisory authority. UAE users: contact the UAE Data Office (uaedataoffice.gov.ae).</p>
+      </div>
+    </div>
+    <p>To exercise any of these rights, email <strong>quadros.clifford@gmail.com</strong>. We will respond within 30 days (GDPR) or the timeframe required by UAE PDPL.</p>
+  </div>
+
+  <!-- SECTION 15 — CHILDREN -->
+  <div class="section" id="s15">
+    <div class="section-header">
+      <div class="section-num">15</div>
+      <h2>Children's privacy</h2>
+    </div>
+    <p>CrisisMatrix is rated 17+ on the Apple App Store and requires users to be at least 17 years old. We do not knowingly collect personal data from children under 13 (USA COPPA) or under 16 (GDPR). If we become aware that a child under the applicable age has provided personal data, we will delete it immediately. If you believe a child has provided data to us, contact <strong>quadros.clifford@gmail.com</strong>.</p>
+  </div>
+
+  <!-- SECTION 16 — CHANGES -->
+  <div class="section" id="s16">
+    <div class="section-header">
+      <div class="section-num">16</div>
+      <h2>Changes to this policy</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time. Material changes will be notified to you via in-app notification at least 14 days before they take effect. The "Effective" date at the top of this document will be updated. Your continued use of the app after the effective date constitutes acceptance of the updated policy.</p>
+    <p>Previous versions of this policy are available on request from <strong>quadros.clifford@gmail.com</strong>.</p>
+  </div>
+
+  <!-- SECTION 17 — CONTACT -->
+  <div class="section" id="s17">
+    <div class="section-header">
+      <div class="section-num">17</div>
+      <h2>Contact us</h2>
+    </div>
+    <p>For all privacy-related queries, requests, or complaints:</p>
+    <ul>
+      <li><strong>Email:</strong> quadros.clifford@gmail.com</li>
+      <li><strong>Subject line:</strong> use "Privacy Query", "Data Deletion Request", "Data Access Request", or "Privacy Complaint" as appropriate</li>
+      <li><strong>Website:</strong> crisismatrix.com</li>
+      <li><strong>Response time:</strong> We aim to respond within 7 business days and complete requests within 30 days</li>
+    </ul>
+    <p>EU users who are dissatisfied with our response may escalate to their national data protection supervisory authority. UAE users may contact the UAE Data Office at <strong>uaedataoffice.gov.ae</strong>.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p><strong style="color:white">CrisisMatrix</strong> — Emergency Survival App</p>
+  <p>Privacy Policy Version 2.1 — Effective 1 July 2026</p>
+  <p>UAE PDPL · GDPR · EU AI Act Article 50 Compliant</p>
+  <p style="margin-top:16px"><a href="mailto:quadros.clifford@gmail.com" style="color:#f97316;text-decoration:none">quadros.clifford@gmail.com</a> · <a href="https://crisismatrix.com" style="color:#f97316;text-decoration:none">crisismatrix.com</a></p>
+</footer>
+
+</body>
+</html>

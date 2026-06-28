@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | CrisisMatrix</title>
+  <meta name="description" content="Contact the CrisisMatrix support team." />
+  <style>
+    :root {
+      --bg: #050607;
+      --red: #ff3447;
+      --red-deep: #d91f32;
+      --muted: rgba(255,255,255,.55);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 20% 18%, rgba(255,52,71,.18), transparent 28%),
+        radial-gradient(circle at 78% 20%, rgba(47,125,255,.14), transparent 30%),
+        var(--bg);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 36px;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand-icon {
+      width: 28px; height: 28px;
+      background: var(--red);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .brand-icon svg { width: 15px; height: 15px; }
+    .brand-text { font-size: 15px; font-weight: 800; letter-spacing: .02em; }
+    .brand-text .c { color: var(--red); }
+    .brand-text .m { color: #fff; }
+    .nav-links { display: flex; gap: 8px; }
+    .nav-links a {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+      padding: 7px 13px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+    .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
+
+    /* MAIN */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px 80px;
+      text-align: center;
+    }
+
+    .icon-wrap {
+      width: 72px; height: 72px;
+      background: rgba(255,52,71,.12);
+      border: 1px solid rgba(255,52,71,.25);
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 28px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 800;
+      letter-spacing: -.5px;
+      margin-bottom: 14px;
+    }
+    h1 span { color: var(--red); }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 400px;
+      line-height: 1.65;
+      margin-bottom: 40px;
+    }
+
+    /* EMAIL CARD */
+    .email-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      padding: 36px 44px;
+      max-width: 420px;
+      width: 100%;
+      margin-bottom: 36px;
+    }
+    .email-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .email-address {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--red);
+      word-break: break-all;
+    }
+
+    /* BACK LINK */
+    .back-link {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
+    }
+    .back-link:hover { color: #fff; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding: 18px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    footer p { font-size: 12px; color: rgba(255,255,255,.22); }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a {
+      font-size: 12px;
+      color: rgba(255,255,255,.3);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,.7); }
+
+    @media (max-width: 500px) {
+      nav { padding: 14px 20px; }
+      .email-card { padding: 24px 20px; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="brand">
+    <div class="brand-icon">
+      <svg viewBox="0 0 15 15" fill="none">
+        <rect x="5.5" y="0" width="4" height="15" rx="1" fill="white"/>
+        <rect x="0" y="5.5" width="15" height="4" rx="1" fill="white"/>
+      </svg>
+    </div>
+    <div class="brand-text"><span class="c">CRISIS</span><span class="m">MATRIX</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="terms-of-service.html">Terms</a>
+    <a href="CrisisMatrix_Privacy_Policy_v2.html">Privacy</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main>
+  <div class="icon-wrap">✉️</div>
+
+  <h1>Get in <span>touch.</span></h1>
+  <p class="subtitle">Have a question about CrisisMatrix, ARIA, or need support? Send us an email and we'll get back to you.</p>
+
+  <div class="email-card">
+    <div class="email-label">Support Email</div>
+    <div class="email-address">support@crisismatrix.com</div>
+  </div>
+
+  <a href="index.html" class="back-link">← Back to home</a>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Dezign IQ Technologies FZ-LLC</p>
+  <div class="footer-links">
+    <a href="terms-of-service.html">Terms of Service</a>
+    <a href="CrisisMatrix_Privacy_Policy_v2.html">Privacy Policy</a>
+  </div>
+</footer>
+
+</body>
+</html>
